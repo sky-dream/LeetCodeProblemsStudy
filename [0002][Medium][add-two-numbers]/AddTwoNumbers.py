@@ -17,3 +17,5 @@ class Solution:
             l2 = l2 and l2.next
             currentNode = currentNode.next
         return res.next    
+    
+    
