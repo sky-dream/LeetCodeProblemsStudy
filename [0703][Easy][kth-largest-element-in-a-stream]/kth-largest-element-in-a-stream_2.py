@@ -1,17 +1,19 @@
+# 小顶堆
+import heapq
 class KthLargest:
     def __init__(self, k, nums):
-        self.nums = nums
+        self.pool = nums
+        heapq.heapify(self.pool)
         self.k = k
-        self.nums.sort(reverse = True)
-        while len(self.nums) > k:
-            self.nums.pop()
+        while len(self.pool) > k:
+            heapq.heappop(self.pool)
 
-    def add(self, val):
-        self.nums.append(val)
-        self.nums.sort(reverse = True)
-        if len(self.nums) > self.k:
-            self.nums.pop()
-        return self.nums[-1]
+    def add(self, val) :
+        if len(self.pool) < self.k:
+            heapq.heappush(self.pool, val)
+        elif val > self.pool[0]:
+            heapq.heapreplace(self.pool, val)
+        return self.pool[0]
     
 def main():
     k = 3
@@ -24,7 +26,7 @@ def main():
     print("last return value is "+str(param_1));
     
 if __name__ =='__main__':
-    main()      
+    main()  
 # Your KthLargest object will be instantiated and called as such:
 # obj = KthLargest(k, nums)
 # param_1 = obj.add(val)
