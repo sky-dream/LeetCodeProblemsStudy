@@ -1,4 +1,10 @@
 //consuming time: 12 ms,consuming memory: 9.6 MB,
+#include <string.h>
+#include <stdlib.h>
+#include<iostream>
+#include <queue>
+#include <algorithm>
+using namespace std;
 class Solution {
 public:
     vector<vector<int>> fourSum(vector<int>& nums, int target) {
@@ -32,3 +38,12 @@ public:
         return total;
     }
 };
+
+int main(){
+    vector<int> nums = {1,0,-1,0,-2,2};
+    int target = 0;
+    Solution *Solution_obj = new Solution();
+    vector<vector<int>> result = Solution_obj->fourSum(nums, target);
+	cout << "In cpp code,result value is " << ("result")<< '\n';
+    return 0;
+}
