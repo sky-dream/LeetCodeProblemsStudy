@@ -55,12 +55,12 @@ int *maxSlidingWindow(int *nums, int numsSize, int k, int *returnSize)
 
 void main()
 {
-    int k = 0;
+    int k = 3;
     int i;
     int returnSize = 0;
     int nums[9] = {9, 3, -1, -3, 5, 3, 6, 7, -3}; //#expect is [9,3,5,5,6,7,7]
     int numsSize = sizeof(nums) / sizeof(int);
-    int *result = maxSlidingWindow(nums, 9, 3, &returnSize);
+    int *result = maxSlidingWindow(nums, numsSize, k, &returnSize);
     printf("In c code , maxSlidingWindow array result  is : [");
     for (i = 0; i < returnSize; i++)
     {
