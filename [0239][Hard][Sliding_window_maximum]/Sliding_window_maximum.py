@@ -8,9 +8,9 @@ class Solution(object):
         if not nums:return []
         window, result = [] , []
         for i,x in enumerate(nums):
-            if i >= k and window[0] <=i-k: 
+            if i >= k and window[0] <=i-k:      #when the window is flowing, left element need to be discarded.
                 window.pop(0)   #discard the left element at the start of the queue
-            while window and nums[ window[-1] ] <=x:
+            while window and nums[ window[-1] ] <=x:        #only keep the max value from the window in the queue.
                 window.pop()    #discard the right element at the end of the queue
             window.append(i)
             if i >= k-1:
