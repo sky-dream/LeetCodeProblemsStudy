@@ -36,4 +36,6 @@ int main(){
     cout << "In cpp code, maxSlidingWindow array result  is : [";
     for(const int& x : result){
             cout << x << ", ";
+    }
+    cout << "]" << endl;
 }
