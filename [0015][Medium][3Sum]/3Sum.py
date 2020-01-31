@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-  
+# leetcode time cost : 1012 ms
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         res = []
