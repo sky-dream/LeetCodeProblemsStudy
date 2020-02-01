@@ -6,6 +6,10 @@ class TreeNode {
     TreeNode(int x) { val = x; }
 } 
 // solution 1, use recursion with flag left,mid,right.
+// leetcode time     cost : 8 ms
+// leetcode memory   cost : 39.2 MB
+// Time  Complexity: O(N)
+// Space Complexity: O(N)
 class Solution {
 
     private TreeNode ans;

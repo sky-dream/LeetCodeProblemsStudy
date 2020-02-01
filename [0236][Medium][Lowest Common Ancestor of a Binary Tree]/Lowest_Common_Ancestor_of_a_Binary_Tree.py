@@ -9,7 +9,7 @@ class TreeNode(object):
 # leetcode time     cost : 96 ms
 # leetcode memory   cost : 26.3 MB
 # Time  Complexity: O(N)
-# Space Complexity: O(1)
+# Space Complexity: O(N)
 class Solution:
 
     def __init__(self):

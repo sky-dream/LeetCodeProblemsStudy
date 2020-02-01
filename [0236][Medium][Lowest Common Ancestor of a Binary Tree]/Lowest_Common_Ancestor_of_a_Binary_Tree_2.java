@@ -10,7 +10,7 @@ class TreeNode {
 // leetcode time     cost : 18 ms
 // leetcode memory   cost : 39.6 MB
 // Time  Complexity: O(N)
-// Space Complexity: O(1)
+// Space Complexity: O(N)
 class Solution {
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
