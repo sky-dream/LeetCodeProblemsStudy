@@ -1,3 +1,4 @@
+# solution 1, forcing calculation,
 class Solution(object):
     def majorityElement(self, nums):
         """
