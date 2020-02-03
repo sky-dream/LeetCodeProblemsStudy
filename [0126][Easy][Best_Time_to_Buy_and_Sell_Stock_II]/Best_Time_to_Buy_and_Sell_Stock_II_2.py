@@ -10,3 +10,4 @@ class Solution(object):
         :rtype: int
         """
         return sum([y - x for x, y in zip(prices[:-1], prices[1:]) if x < y])
+        #return sum(max(b-a,0)for a,b in zip(prices,prices[1:]))
