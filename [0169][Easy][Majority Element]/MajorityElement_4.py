@@ -1,4 +1,8 @@
 #solution 4, random choice function,
+# leetcode time     cost : 168 ms
+# leetcode memory   cost : 13.2 MB 
+# Time  Complexity: O(∞)
+# Space Complexity: O(1)
 import random
 class Solution(object):
     def majorityElement(self, nums):

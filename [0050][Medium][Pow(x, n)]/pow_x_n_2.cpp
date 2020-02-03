@@ -1,4 +1,6 @@
 //solution 2, use for loop
+// leetcode time     cost : 0 ms
+// leetcode memory   cost : 8.1 MB
 class Solution {
 public:
     double myPow(double x, int n) {

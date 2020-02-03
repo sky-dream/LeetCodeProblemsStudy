@@ -1,4 +1,4 @@
-﻿﻿Implement the following operations of a queue using stacks.
+﻿Implement the following operations of a queue using stacks.
 
 - push(x) -- Push element x to the back of queue.
 - pop() -- Removes the element from in front of queue.
@@ -27,10 +27,6 @@ queue.empty(); // returns false
 - Depending on your language, stack may not be supported natively. You may simulate a stack by using a list or deque (double-ended queue), as long as you use only standard operations of a stack.
 - You may assume that all operations are valid (for example, no pop or peek operations will be called on an empty queue).
 
-
-来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/implement-queue-using-stacks
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 
 

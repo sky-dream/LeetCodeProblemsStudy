@@ -1,3 +1,5 @@
+// leetcode time     cost : 0 ms
+// leetcode memory   cost : 8.4 MB
 class Solution {
 public:
     double fastPow(double x, long long n) {

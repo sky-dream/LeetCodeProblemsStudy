@@ -15,7 +15,15 @@ class Solution:
 
     def helper(self, root, left=float('-inf'), right=float('inf')):
         if not root:
-            return True
+            return True        
         # every node's value has its range, need to add constraint for them.
         return left < root.val < right and self.helper(root.left, left, root.val)\
                and self.helper(root.right, root.val, right)
+
+# python3 get max int
+# import sys
+# max = sys.maxsize
+
+# python3 get max float
+# solution1, import sys, max = sys.float_info.max
+# solution2, infinity = float("inf"), 

@@ -1,4 +1,6 @@
 #solution 1, recursion
+# leetcode time     cost : 20 ms
+# leetcode memory   cost : 11.7 MB 
 class Solution(object):
     def myPow(self, x, n):
         """

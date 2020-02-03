@@ -1,4 +1,6 @@
 //solution 2, use loop.
+// leetcode time     cost : 1 ms
+// leetcode memory   cost : 33.4 MB
 class Solution {
     public double myPow(double x, int n) {
         long N = n;

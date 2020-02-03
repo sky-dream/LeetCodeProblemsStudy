@@ -1,4 +1,6 @@
 //solution 1, use recursion.
+// leetcode time     cost : 1 ms
+// leetcode memory   cost : 33.4 MB
 class Solution {
     private double fastPow(double x, long n) {
         if (n == 0) {

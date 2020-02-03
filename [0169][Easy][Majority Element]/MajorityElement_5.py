@@ -1,5 +1,8 @@
 #solution 5, divide and conquer,
-import random
+# leetcode time     cost : 264 ms
+# leetcode memory   cost : 14.6 MB 
+# Time  Complexity: O(nlgn)
+# Space Complexity: O(lgn)
 class Solution(object):
     def majorityElement(self, nums):
         """

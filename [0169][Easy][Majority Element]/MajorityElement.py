@@ -1,4 +1,8 @@
-# solution 1, forcing calculation,
+# solution 1, brute force calculation,
+# leetcode time     cost : na ms
+# leetcode memory   cost : na MB 
+# Time  Complexity: O(N*N)
+# Space Complexity: O(1)
 class Solution(object):
     def majorityElement(self, nums):
         """

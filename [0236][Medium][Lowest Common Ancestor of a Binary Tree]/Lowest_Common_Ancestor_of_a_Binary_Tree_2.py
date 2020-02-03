@@ -7,7 +7,7 @@ class TreeNode(object):
         self.right = None
 # solution 2, use iteration to travel all the nodes with parent pointer.
 # leetcode time     cost : 52 ms
-# leetcode memory   cost : 19.6 MB
+# leetcode memory   cost : 19.6 MB 
 # Time  Complexity: O(N)
 # Space Complexity: O(N)
 class Solution:

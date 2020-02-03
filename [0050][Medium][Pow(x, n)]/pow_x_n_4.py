@@ -1,4 +1,6 @@
 #solution 2, iteration with while loop and bit operation.
+# leetcode time     cost : 16 ms
+# leetcode memory   cost : 11.6 MB 
 class Solution(object):
     def myPow(self, x, n):
         """
