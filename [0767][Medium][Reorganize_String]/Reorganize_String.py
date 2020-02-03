@@ -1,29 +1,15 @@
-# solution 3, based on the greedy,
-"""
-Imagine that there are two columns needed to be filled: even-indexed and odd-indexed column,
-fill the most common chars into the even-indexed column if possible,
-fill the remaining chars into the even-indexed column, then odd-indexed column.
-"""
-# leetcode time     cost : 20 ms
-# leetcode memory   cost : 11.8 MB 
+# solution 1, based on the appearance count of each letter.
+# leetcode time     cost : 24 ms
+# leetcode memory   cost : 11.9 MB 
+# Time  Complexity: O(A(N+logA))，其中 NN 是 SS 的长度，AA 是字母表的大小。
+# Space Complexity: O(N)。
 class Solution(object):
     def reorganizeString(self, S):
-        """
-        :type S: str
-        :rtype: str
-        """
-        count = collections.Counter(S)
-        c_max, f_max = count.most_common(1)[0]
-        if 2 * f_max - 1 > len(S):
-            return ''
-        count.pop(c_max)
-        res = len(S) * ['']
-        res[:2*f_max:2] = f_max * [c_max]
-        i = 2 * f_max
-        for c in count:
-            for _ in range(count[c]):
-                if i >= len(S):
-                    i = 1
-                res[i] = c
-                i += 2
-        return ''.join(res)
+        N = len(S)
+        A = []
+        for c, x in sorted((S.count(x), x) for x in set(S)):
+            if c > (N+1)/2: return ""
+            A.extend(c * x)
+        ans = [None] * N
+        ans[::2], ans[1::2] = A[N/2:], A[:N/2]
+        return "".join(ans)

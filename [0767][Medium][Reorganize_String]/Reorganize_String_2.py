@@ -1,6 +1,6 @@
 # solution 2, based on the greedy heap.
 # leetcode time     cost : 16 ms
-# leetcode memory   cost : 12.7 MB 
+# leetcode memory   cost : 11.8 MB 
 # Time  Complexity: O(NlogA))，其中 NN 为 SS 的长度，AA 为字母表的大小。如果 AA 是一个定值，那么复杂度为 O(N)O(N)。
 # Space Complexity: O(A)。如果 AA 是一个定值，那么复杂度为 O(1)O(1)。
 class Solution(object):
