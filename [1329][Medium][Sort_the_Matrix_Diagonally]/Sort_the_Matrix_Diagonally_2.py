@@ -1,6 +1,6 @@
 # solution 1,
-# leetcode time     cost : 60 ms
-# leetcode memory   cost : 20.1 MB
+# leetcode time     cost : 64 ms
+# leetcode memory   cost : 12.1 MB
 # Time  Complexity: O(mn log(min(m,n))
 # Space Complexity: O(min(m,n))
 '''

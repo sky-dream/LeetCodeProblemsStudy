@@ -1,8 +1,8 @@
 # solution 1,
-# leetcode time     cost : 60 ms
-# leetcode memory   cost : 20.1 MB
+# leetcode time     cost : 124 ms
+# leetcode memory   cost : 12.1 MB
 # Time  Complexity: O(mn log(min(m,n))
-# Space Complexity: O(N)
+# Space Complexity: O(min(m,n))
 '''
 For each left cell and each top cell, sort the diagonal starting there. For each diagonal, first compute the list of its index pairs ij. 
 Then use that list both for reading the values and for writing them back (after having sorted them).
