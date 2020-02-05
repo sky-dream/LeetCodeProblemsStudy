@@ -3,6 +3,7 @@
 # leetcode memory   cost : 11.8 MB 
 # Time  Complexity: O(NlogA))，其中 NN 为 SS 的长度，AA 为字母表的大小。如果 AA 是一个定值，那么复杂度为 O(N)O(N)。
 # Space Complexity: O(A)。如果 AA 是一个定值，那么复杂度为 O(1)O(1)。
+import heapq 
 class Solution(object):
     def reorganizeString(self, S):
         """
@@ -28,3 +29,12 @@ class Solution(object):
             if nct2 + 1: heapq.heappush(pq, (nct2 + 1, ch2))
 
         return "".join(ans) + (pq[0][1] if pq else '')
+    
+def main():
+    string1 = "aabcc" #expect is "abcac", or "acabc"
+    obj = Solution()
+    result = obj.reorganizeString(string1)
+    print("return result is "+result);
+
+if __name__ =='__main__':
+    main() 

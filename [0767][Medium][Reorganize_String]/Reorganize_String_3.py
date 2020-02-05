@@ -6,6 +6,7 @@ fill the remaining chars into the even-indexed column, then odd-indexed column.
 """
 # leetcode time     cost : 20 ms
 # leetcode memory   cost : 11.8 MB 
+import collections
 class Solution(object):
     def reorganizeString(self, S):
         """
@@ -27,3 +28,12 @@ class Solution(object):
                 res[i] = c
                 i += 2
         return ''.join(res)
+
+def main():
+    string1 = "aabcc" #expect is "abcac", or "acabc"
+    obj = Solution()
+    result = obj.reorganizeString(string1)
+    print("return result is "+result);
+
+if __name__ =='__main__':
+    main() 
