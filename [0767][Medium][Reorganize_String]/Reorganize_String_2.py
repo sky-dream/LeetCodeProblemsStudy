@@ -12,11 +12,14 @@ class Solution(object):
         """
         pq = [(-S.count(x), x) for x in set(S)]
         heapq.heapify(pq)
+        #use negative counter for each char to match the MinHeap()(小顶堆)
+        #on the top of the heap is the most common char, the char with the max counter.
         if any(-nc > (len(S) + 1) / 2 for nc, x in pq):
             return ""
 
         ans = []
         while len(pq) >= 2:
+            # pop out the 2 different smallest negative counter char, the 2 char with max counter
             nct1, ch1 = heapq.heappop(pq)
             nct2, ch2 = heapq.heappop(pq)
             #This code turns out to be superfluous, but explains what is happening
@@ -25,9 +28,10 @@ class Solution(object):
             #else:
             #    ans.extend([ch2, ch1])
             ans.extend([ch1, ch2])
+            # use (nct1 + 1) increase the negative char counter,as a fact to decrease the char counter,
             if nct1 + 1: heapq.heappush(pq, (nct1 + 1, ch1))
             if nct2 + 1: heapq.heappush(pq, (nct2 + 1, ch2))
-
+        # if the len(s) is odd, everytime pop out 2 char,there will be 1 char left in the heap,otherwise the heap will empty('').
         return "".join(ans) + (pq[0][1] if pq else '')
     
 def main():
