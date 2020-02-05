@@ -15,7 +15,7 @@ class Solution(object):
         return "".join(ans)
 
 def main():
-    string1 = "aabccddee" #expect is "abcac", or "acabc"
+    string1 = "aabccddee" #expect is "cbdadaece", or else
     obj = Solution()
     result = obj.reorganizeString(string1)
     print("return result is "+result);
