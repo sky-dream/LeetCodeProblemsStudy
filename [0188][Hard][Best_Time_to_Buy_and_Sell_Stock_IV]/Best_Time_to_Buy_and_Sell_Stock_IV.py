@@ -33,7 +33,6 @@ class Solution:
         return res 
 
     def maxProfit_k_inf(self, prices):
-        print("maxProfit_k_inf is call")
         n = len(prices)
         dp_i_0 ,dp_i_1 =  0, -prices[0]
         for i in range(1,n):
@@ -46,7 +45,7 @@ def main():
     k1 = 4   
     nums1 = [5,7,2,7,3,3,5,3,0] #expect is 9
     k2 = 2   
-    nums1 = [3,2,6,5,0,3] #expect is 7    
+    nums2 = [3,2,6,5,0,3] #expect is 7    
     obj = Solution()
     result = obj.maxProfit(k1,nums1)
     print("return result is "+str(result));
