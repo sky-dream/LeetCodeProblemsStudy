@@ -12,4 +12,4 @@ Given n = 3, a solution set is:
   "()()()"
 ]
 ```
-Solution related:  recursion and branch cut.
+Solution related:  recursion and trim the branches.
