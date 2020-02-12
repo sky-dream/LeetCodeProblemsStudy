@@ -1,8 +1,9 @@
 // solution 3, analysis and design.
 // leetcode time     cost : 2 ms
 // leetcode memory   cost : 38.3 MB 
-// Time  Complexity: O(M)，M is all the task number。
+// Time  Complexity: O(M)，M is all the task number
 // Space Complexity: O(1)
+import java.util.Arrays;
 public class Solution {
     public int leastInterval(char[] tasks, int n) {
         int[] map = new int[26];
