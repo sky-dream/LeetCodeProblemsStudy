@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-  
-# solution 1, Backtracking.
+# solution 3, Closure Number.
 # leetcode time     cost : 28 ms
 # leetcode memory   cost : 12 MB 
 # Time  Complexity: O(2^{2n}/srt(n))
