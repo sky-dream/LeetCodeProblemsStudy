@@ -2,8 +2,8 @@
 # solution 2, Backtracking.
 # leetcode time     cost : 24 ms
 # leetcode memory   cost : 12 MB 
-# Time  Complexity: O(2^{2n}/srt(n))
-# Space Complexity: O(2^{2n}/srt(n))
+# Time  Complexity: O(2^{2n}/sqrt(n))
+# Space Complexity: O(2^{2n}/sqrt(n))
 '''
 Instead of adding '(' or ')' every time as in Approach 1, 
 let's only add them when we know it will remain a valid sequence. 

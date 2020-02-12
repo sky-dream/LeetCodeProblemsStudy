@@ -2,8 +2,8 @@
 # solution 3, Closure Number.
 # leetcode time     cost : 28 ms
 # leetcode memory   cost : 12 MB 
-# Time  Complexity: O(2^{2n}/srt(n))
-# Space Complexity: O(2^{2n}/srt(n))
+# Time  Complexity: O(2^{2n}/sqrt(n))
+# Space Complexity: O(2^{2n}/sqrt(n))
 '''
 To enumerate something, generally we would like to express it as a sum of disjoint subsets that are easier to count.
 
