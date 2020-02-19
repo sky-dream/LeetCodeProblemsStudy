@@ -7,6 +7,8 @@ class Trie:
         """
         Initialize your data structure here.
         """
+        # self element is a dict, key is the string char, value is the next trie object.
+        # use special key # and value # as the ending flag. 
         self.lookup = {}
         
 
@@ -31,7 +33,9 @@ class Trie:
         for a in word:
             if a not in tree:
                 return False
+            # else get the next node by the current char as the key
             tree = tree[a]
+        # check the ending flag if all the char in the word already checked.
         if "#" in tree:
             return True
         return False

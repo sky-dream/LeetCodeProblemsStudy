@@ -1,5 +1,6 @@
 #-*- coding: utf-8 -*-  
 # Definition for a Trie.
+import collections
 class TrieNode:
     # Initialize your data structure here.
     def __init__(self):
