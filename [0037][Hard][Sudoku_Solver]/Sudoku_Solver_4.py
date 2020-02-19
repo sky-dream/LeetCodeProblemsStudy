@@ -32,6 +32,7 @@ class Solution:
                     if backtrack(pos+1): return True
             # still not valid, reset val and backtrack
             board1[i][j] = 0
+            return False
 			
         # list out those cells == 0
         need = [(i, j) for i in range(9) for j in range(9) if not board1[i][j]]

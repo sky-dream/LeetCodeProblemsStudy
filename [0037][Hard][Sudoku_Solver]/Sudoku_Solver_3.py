@@ -8,6 +8,7 @@ Every time we find a '.', we store the possible numbers we can choose in a dict,
 if the possible numbers is only one, we fill the board first and refill the board from beginning,
 and last , we choose a position where the possible numbers is least to continue search
 '''
+import copy
 class Solution:
     def solveSudoku(self, board):
         res = self.dfs(board)
@@ -34,6 +35,7 @@ class Solution:
                             for y in range(3) for x in range(3)}
                     row = {board[j][x] for x in range(9)}
                     col = {board[y][i] for y in range(9)}
+                    # use set()'s difference method to get the possible choice.
                     rest = digits.difference(square, row, col)
                     if len(rest) == 1:
                         board[j][i] = rest.pop()
@@ -49,4 +51,5 @@ class Solution:
             b = copy.deepcopy(board)
             b[y][x] = n
             best.append(b)
+        # if not complete, return all the possible board of the choices in board[y][x] from dict choice[(y, x)].
         return best
