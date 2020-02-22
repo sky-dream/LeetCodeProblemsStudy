@@ -35,7 +35,7 @@ class Solution(object):
         return "".join(ans) + (pq[0][1] if pq else '')
     
 def main():
-    string1 = "aabcc" #expect is "abcac", or "acabc"
+    string1 = "aabccddeeef" #expect is "abcac", or "acabc"
     obj = Solution()
     result = obj.reorganizeString(string1)
     print("return result is "+result);

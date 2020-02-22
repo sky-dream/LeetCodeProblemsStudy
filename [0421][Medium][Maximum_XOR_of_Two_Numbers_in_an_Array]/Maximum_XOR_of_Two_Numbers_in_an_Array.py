@@ -17,7 +17,9 @@ class Solution:
     def insertNumToTrie(self,nums):
         for num in nums:
             node = self.root
+            # loop j by descending order from 31 to 0 by step -1.
             for j in range (self.maxBit, -1, -1):
+                # get bit j of num
                 tmp = num & 1 << j
                 if tmp:
                     if not node.one:

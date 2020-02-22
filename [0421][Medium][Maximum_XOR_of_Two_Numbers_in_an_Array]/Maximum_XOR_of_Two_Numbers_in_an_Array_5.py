@@ -32,13 +32,16 @@ class Trie:
         curr = self.root
         for i in range(len(word)):
             bit = word[i]
-            
+            # first choice is the num bynary string is 1, related bit in the tree is 0,
             if bit == '1' and curr.children.get('0'):
                 curr = curr.children['0']
+            # 2nd choice is the num bynary string is 0, but related bit in the tree is 1,
             elif bit == '0' and curr.children.get('1'):
                 curr = curr.children['1']
+            # 3th choice is the num bynary string and related bit in the tree are the same, this bit cann't be used in the xor result.
             elif curr.children.get(bit):
                 curr = curr.children[bit]
+            # no next layer in the tree any more, exit
             else:
                 break
                 
@@ -62,7 +65,7 @@ class Solution(object):
         max_xor = -2**(32)
         
         for i in nums:
-            binary_string = (bin(i)[2:]).zfill(31)
+            binary_string = (bin(i)[2:]).zfill(31)      # i=10, bin(i)--> 0b1010, bin(i)[2:]---> 1010
             self.trie.insert(binary_string, i)
             max_xor = max(max_xor, self.trie.search(binary_string, i))
         
