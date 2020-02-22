@@ -1,3 +1,8 @@
+# leetcode time     cost : 20 ms
+# leetcode memory   cost : 11.8 MB 
+# Time  Complexity: O(N)
+# Space Complexity: O(N)
+# solution 2, recursion with memory
 class Solution(object):
     def climbStairs(self, n):
         """
@@ -14,5 +19,12 @@ class Solution(object):
         else:
             all_ways_cache_dict[n] = self.helper(n-1, all_ways_cache_dict) + self.helper(n-2, all_ways_cache_dict)
             return all_ways_cache_dict[n] 
-s = Solution()
-print(s.climbStairs(30))
+
+def main():
+    num = 10          # expect is 89,
+    obj = Solution()
+    result = obj.climbStairs(num)        
+    print("return result is ",result);
+    
+if __name__ =='__main__':
+    main() 

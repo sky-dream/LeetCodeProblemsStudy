@@ -1,3 +1,8 @@
+# leetcode time     cost : 16 ms
+# leetcode memory   cost : 11.8 MB 
+# Time  Complexity: O(N)
+# Space Complexity: O(1)
+# slolution 4, Fibonacci sequence,
 class Solution(object):
     def climbStairs(self, n):
         """
@@ -14,5 +19,12 @@ class Solution(object):
             twoStepBefore = oneStepBefore
             oneStepBefore = totalWays        
         return totalWays
-s = Solution()
-print(s.climbStairs(30))
+
+def main():
+    num = 10          # expect is 89,
+    obj = Solution()
+    result = obj.climbStairs(num)        
+    print("return result is ",result);
+    
+if __name__ =='__main__':
+    main() 
