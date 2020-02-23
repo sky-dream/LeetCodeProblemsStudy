@@ -4,8 +4,6 @@
 # solution 1, DP by iterate from the last 2nd row to the top row.
 # 4 coding solutions as below.
 # https://leetcode.com/problems/triangle/discuss/38735/Python-easy-to-understand-solutions-(top-down-bottom-up).
-from functools import reduce
-# reduce(function, iterable[, initializer])
 class Solution:
     # O(n*n/2) space, top-down 
     def minimumTotal(self, triangle):
