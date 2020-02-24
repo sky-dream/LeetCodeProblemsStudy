@@ -4,11 +4,12 @@
 // Time  Complexity: O(M)，M is all the task number
 // Space Complexity: O(1)
 import java.util.Arrays;
-public class Solution {
+class Solution {
     public int leastInterval(char[] tasks, int n) {
         int[] map = new int[26];
-        for (char c: tasks)
+        for (char c: tasks){
             map[c - 'A']++;
+        }
         Arrays.sort(map);
         int max_val = map[25] - 1, idle_slots = max_val * n;
         for (int i = 24; i >= 0 && map[i] > 0; i--) {
@@ -24,7 +25,7 @@ We set apart each max task with interval n, and we hope to put all other tasks i
 If the number of those tasks exceeds the interval space, then we don't need any idle interval at all. 
 If not, the interval space plus the max tasks will be the least interval. Be care for the existent of multiple max tasks.
 */ 
-public class Solution {
+class Solution_1 {
     public int leastInterval(char[] tasks, int n) {
         int[] storage = new int[26];
         for (char c : tasks) {

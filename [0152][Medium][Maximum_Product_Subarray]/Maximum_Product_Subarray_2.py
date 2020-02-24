@@ -20,6 +20,13 @@ class Solution(object):
             if nums[j] == 0:
                 product = 1
         return res
+    
+    def maxProduct_2(self, nums):
+        nums_rev = nums[::-1]
+        for i in range(1, len(nums)):
+            nums[i] *= nums[i - 1] or 1
+            nums_rev[i] *= nums_rev[i - 1] or 1
+        return max(nums + nums_rev)
 
 def main():
     nums = [2,3,-2,4]        #expect is 6

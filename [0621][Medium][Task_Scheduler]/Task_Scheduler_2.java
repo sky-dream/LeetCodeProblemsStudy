@@ -3,7 +3,11 @@
 // leetcode memory   cost : 38.9 MB 
 // Time  Complexity: O(time)
 // Space Complexity: O(1)
-public class Solution {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Collections;
+class Solution {
     public int leastInterval(char[] tasks, int n) {
         int[] map = new int[26];
         for (char c: tasks)
