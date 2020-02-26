@@ -44,6 +44,11 @@ int main(){
     int target = 0;
     Solution *Solution_obj = new Solution();
     vector<vector<int>> result = Solution_obj->fourSum(nums, target);
-	cout << "In cpp code,result value is " << ("result")<< '\n';
+	cout << "In cpp code,result value is " << endl;
+    for (int i = 0; i < result.size(); i++){
+        for(int j = 0; j < result[0].size(); j++)
+            cout << result[i][j] << " ";
+        cout << endl;
+    }
     return 0;
 }

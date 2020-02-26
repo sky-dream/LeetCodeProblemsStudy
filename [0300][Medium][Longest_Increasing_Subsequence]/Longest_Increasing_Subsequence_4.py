@@ -3,6 +3,7 @@
 # Time  Complexity: O(N*logN)
 # Space Complexity: O(n)
 # slolution 3, DP,
+import bisect
 class Solution(object):
     def lengthOfLIS(self, nums):
         """
@@ -32,3 +33,12 @@ class Solution(object):
             else:
                 dp[bi] = num
         return len(dp)
+
+def main():
+    nums = [1,3,6,7,9,4,10,5,6] #expect is 6
+    obj = Solution()
+    result = obj.lengthOfLIS(nums)
+    print("return result is "+str(result));
+
+if __name__ =='__main__':
+    main() 

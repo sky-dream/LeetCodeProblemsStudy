@@ -15,6 +15,10 @@ public class Solution {
         if (curpos == nums.length) {
             return 0;
         }
+        
+        // directly use the value if memo[previndex + 1][curpos] is calculated before,
+        // memo[previndex + 1][curpos] is the max window length 
+        // if num[curpos] chosen and second end in window is nums[previndex + 1] when it comes to curpos, 
         if (memo[previndex + 1][curpos] >= 0) {
             return memo[previndex + 1][curpos];
         }
@@ -26,7 +30,17 @@ public class Solution {
         }
 
         int nottaken = lengthofLIS(nums, previndex, curpos + 1, memo);
+        // compare to DP the [curpos] is the outside iterator i, [previndex + 1] is the inside iterator j(0<j<i).
         memo[previndex + 1][curpos] = Math.max(taken, nottaken);
         return memo[previndex + 1][curpos];
+    }
+}
+
+public class Longest_Increasing_Subsequence_2 {
+    public static void main(String args[]) {
+        int[] nums = {1,3,6,7,9,4,10,5,6}  ;   // expect is 6
+        Solution Solution_obj = new Solution();
+        int result = Solution_obj.lengthOfLIS(nums);
+        System.out.println("In java code,return value is :" + (result));
     }
 }
