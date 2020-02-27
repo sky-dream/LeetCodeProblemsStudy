@@ -28,6 +28,6 @@ public class Number_of_Islands_5 {
         char[][] grid = {{'1','1','1','1','0'},{'1','1','0','1','0'},{'1','1','0','0','0'},{'0','0','0','0','0'}}; // expect is 1,
         Solution Solution_obj = new Solution();
         int result = Solution_obj.numIslands(grid);
-        System.out.println("In java code, 1st result is :" + result);
+        System.out.println("In java code,result is :" + result);
     }
 }
