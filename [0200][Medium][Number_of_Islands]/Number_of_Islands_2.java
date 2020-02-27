@@ -1,79 +1,61 @@
-//Definition for a Trie.
-class Trie {
-    public boolean isWord;
-    public char word;
-    public Trie[] tries = new Trie[26];
-
-    /** Initialize your data structure here. */
-    public Trie() {
-        this.isWord =false;
-        this.word=' ';
-         
-    }
-    
-    /** Inserts a word into the trie. */
-    public void insert(String word) {
-        char [] array = word.toCharArray();
-        Trie node=this;
-        for(int i=0;i<array.length;i++){
-            if(node.tries[array[i]-'a']==null){
-                node.tries[array[i]-'a']=new Trie();     
+// leetcode time     cost : 7 ms
+// leetcode memory   cost : 42.2 MB 
+// Time  Complexity: O(M*N)
+// Space Complexity: O(min(m,n))
+// solution 2, BFS,
+import java.util.LinkedList;
+import java.util.Queue;
+class Solution {
+    public int numIslands(char[][] grid) {
+      if (grid == null || grid.length == 0) {
+        return 0;
+      }
+  
+      int nr = grid.length;
+      int nc = grid[0].length;
+      int num_islands = 0;
+  
+      for (int r = 0; r < nr; ++r) {
+        for (int c = 0; c < nc; ++c) {
+          if (grid[r][c] == '1') {
+            ++num_islands;
+            grid[r][c] = '0'; // mark as visited
+            Queue<Integer> neighbors = new LinkedList<>();
+            neighbors.add(r * nc + c);
+            while (!neighbors.isEmpty()) {
+              int id = neighbors.remove();
+              int row = id / nc;
+              int col = id % nc;
+              if (row - 1 >= 0 && grid[row-1][col] == '1') {
+                neighbors.add((row-1) * nc + col);
+                grid[row-1][col] = '0';
+              }
+              if (row + 1 < nr && grid[row+1][col] == '1') {
+                neighbors.add((row+1) * nc + col);
+                grid[row+1][col] = '0';
+              }
+              if (col - 1 >= 0 && grid[row][col-1] == '1') {
+                neighbors.add(row * nc + col-1);
+                grid[row][col-1] = '0';
+              }
+              if (col + 1 < nc && grid[row][col+1] == '1') {
+                neighbors.add(row * nc + col+1);
+                grid[row][col+1] = '0';
+              }
             }
-            node=node.tries[array[i]-'a'];
-            node.word=array[i];
-            if(i==array.length-1){
-                node.isWord=true;
-            }    
+          }
         }
-        
-    }
-    
-    /** Returns if the word is in the trie. */
-    public boolean search(String word) {
-        char [] array =word.toCharArray();
-        Trie node =this;
-            for(int i=0;i<array.length;i++){
-                if(node.tries[array[i]-'a']!=null){
-                    node =node.tries[array[i]-'a'];
-                    if(node.word ==array[i])
-                        continue;
-                    else
-                        return false;
-                }else
-                    return false;
-            
-            }     
-            return node.isWord==true?true:false;
-     
-        
-        
-        
-    }
-    
-    /** Returns if there is any word in the trie that starts with the given prefix. */
-    public boolean startsWith(String prefix) {
-        char [] array =prefix.toCharArray();
-        Trie node =this;
-            for(int i=0;i<array.length;i++){
-                if(node.tries[array[i]-'a']!=null){
-                    node =node.tries[array[i]-'a'];
-                    if(node.word ==array[i])
-                        continue;
-                    else
-                        return false;
-                }
-                else
-                    return false;
-
-            }
-            return true;
+      }
+  
+      return num_islands;
     }
 }
 
-/**
- * Your Trie object will be instantiated and called as such:
- * Trie obj = new Trie();
- * obj.insert(word);
- * boolean param_2 = obj.search(word);
- * boolean param_3 = obj.startsWith(prefix);
- */
+public class Number_of_Islands_2 {
+    public static void main(String args[]) {
+        char[][] grid = {{'1','1','1','1','0'},{'1','1','0','1','0'},{'1','1','0','0','0'},{'0','0','0','0','0'}}; // expect is 1,
+        Solution Solution_obj = new Solution();
+        int result = Solution_obj.numIslands(grid);
+        System.out.println("In java code, 1st result is :" + result);
+    }
+}

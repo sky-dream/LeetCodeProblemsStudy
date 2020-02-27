@@ -1,43 +1,24 @@
-#-*- coding: utf-8 -*-  
-# Definition for a Trie.
-import collections
-class TrieNode:
-    # Initialize your data structure here.
-    def __init__(self):
-        self.children = collections.defaultdict(TrieNode)
-        self.is_word = False
+# leetcode time     cost : 112 ms
+# leetcode memory   cost : 14.6 MB 
+# Time  Complexity: O(M*N)
+# Space Complexity: O(M*N)
+# solution 1. DFS
+class Solution:
+    #def numIslands(self, grid: List[List[str]]) -> int:
+    def numIslands(self, grid):
+        def sink(i, j):
+            if 0 <= i < len(grid) and 0 <= j < len(grid[i]) and grid[i][j] == '1':
+                grid[i][j] = '0'
+                list(map(sink, (i+1, i-1, i, i), (j, j, j+1, j-1)))  # map in python3 return iterator
+                return 1
+            return 0
+        return sum(sink(i, j) for i in range(len(grid)) for j in range(len(grid[i])))
 
-class Trie:
-
-    def __init__(self):
-        self.root = TrieNode()
-
-    def insert(self, word):
-        current = self.root
-        for letter in word:
-            current = current.children[letter]
-        current.is_word = True
-
-    def search(self, word):
-        current = self.root
-        for letter in word:
-            current = current.children.get(letter)
-            if current is None:
-                return False
-        return current.is_word
-
-    def startsWith(self, prefix):
-        current = self.root
-        for letter in prefix:
-            current = current.children.get(letter)
-            if current is None:
-                return False
-        return True
-        
-
-
-# Your Trie object will be instantiated and called as such:
-# obj = Trie()
-# obj.insert(word)
-# param_2 = obj.search(word)
-# param_3 = obj.startsWith(prefix)
+def main():
+    grid = [["1","1","1","1","0"],["1","1","0","1","0"],["1","1","0","0","0"],["0","0","0","0","0"]]  # expect is 1,
+    obj = Solution()
+    result = obj.numIslands(grid)       
+    print("return result is ",result)
+    
+if __name__ =='__main__':
+    main() 
