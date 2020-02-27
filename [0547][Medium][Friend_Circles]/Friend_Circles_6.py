@@ -1,6 +1,6 @@
 # solution 1 greedy algorithm.
-# leetcode time     cost : 324 ms
-# leetcode memory   cost : 29.5 MB 
+# leetcode time     cost : 240 ms
+# leetcode memory   cost : 13.7 MB 
 # Time  Complexity: O(n**2)
 # Space Complexity: O(1)
 # solution 3, Easy Python Union Find
