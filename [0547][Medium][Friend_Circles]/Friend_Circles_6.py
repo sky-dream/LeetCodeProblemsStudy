@@ -19,8 +19,9 @@ class Solution(object):
             for j in range(len(M[i])):
                 if M[i][j]:
                     union(i, j)
-        circle = set(find(i) for i in range(n))            
-        return len(circle) 
+        #circle = set(find(i) for i in range(n))            
+        #return len(circle) 
+        return sum(1 for i in range(n) if i==parents[i])
     
 def main():
     M = [[1,1,0],[1,1,0],[0,0,1]]

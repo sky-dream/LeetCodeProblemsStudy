@@ -12,10 +12,12 @@ class Solution(object):
             if i not in seen:
                 toSee = [i]
                 while len(toSee):
-                    cur = toSee.pop()
+                    # pop out the last element, use toSee.pop(0) can pop out the first element
+                    cur = toSee.pop()       
                     if cur not in seen:
                         seen.add(cur)
-                        toSee = [j for j,v in enumerate(M[cur]) if v and j not in seen] + toSee
+                        toSee = [j for j,value in enumerate(M[cur]) if value and j not in seen] + toSee
+                # when check i, and i not in the checked friends circle beforem then it is in a new friend circle.        
                 res += 1
         return res
     

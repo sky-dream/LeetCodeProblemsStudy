@@ -15,9 +15,10 @@ class Solution {
                 queue.add(i);
                 while (!queue.isEmpty()) {
                     int s = queue.remove();
-                    visited[s] = 1;
+                    // visited[s] = 1; the same effect as the statement in line 21,
                     for (int j = 0; j < M.length; j++) {
                         if (M[s][j] == 1 && visited[j] == 0)
+                            visited[s] = 1;
                             queue.add(j);
                     }
                 }

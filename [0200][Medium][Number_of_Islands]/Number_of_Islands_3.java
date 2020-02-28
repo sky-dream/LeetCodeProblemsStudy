@@ -27,7 +27,8 @@ class Solution {
     }
 
     public int find(int i) { // path compression
-      if (parent[i] != i) parent[i] = find(parent[i]);
+      if (parent[i] != i) 
+        parent[i] = find(parent[i]);
       return parent[i];
     }
 
@@ -58,7 +59,7 @@ class Solution {
 
     int nr = grid.length;
     int nc = grid[0].length;
-    int num_islands = 0;
+    //int num_islands = 0;
     UnionFind uf = new UnionFind(grid);
     for (int r = 0; r < nr; ++r) {
       for (int c = 0; c < nc; ++c) {

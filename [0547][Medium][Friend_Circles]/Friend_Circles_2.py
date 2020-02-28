@@ -5,18 +5,18 @@
 # Space Complexity: O(1)
 # solution 1, DFS,
 class Solution:
-    def findCircleNum(self, A):
-        N = len(A)
-        seen = set()
+    def findCircleNum(self, matrix_M):
+        N = len(matrix_M)
+        visited = set()
         def dfs(node):
-            for nei, adj in enumerate(A[node]):
-                if adj and nei not in seen:
-                    seen.add(nei)
-                    dfs(nei)
+            for j, friend_i_j in enumerate(matrix_M[node]):  #dfs(i), nei is col j, adj is the matrix_M[i][j],
+                if friend_i_j and (j not in visited):
+                    visited.add(j)
+                    dfs(j)
         
         ans = 0
         for i in range(N):
-            if i not in seen:
+            if i not in visited:
                 dfs(i)
                 ans += 1
         return ans
