@@ -8,20 +8,20 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Collections;
 class Solution {
-    public int leastInterval(char[] tasks, int n) {
-        int[] map = new int[26];
-        for (char c: tasks)
+    public int leastInterval(final char[] tasks, final int n) {
+        final int[] map = new int[26];
+        for (final char c : tasks)
             map[c - 'A']++;
-        //max heap, keep the max value of the char on the top.
-        PriorityQueue < Integer > queue = new PriorityQueue < > (26, Collections.reverseOrder());
-        for (int f: map) {
+        // max heap, keep the max value of the char on the top.
+        final PriorityQueue<Integer> queue = new PriorityQueue<>(26, Collections.reverseOrder());
+        for (final int f : map) {
             if (f > 0)
                 queue.add(f);
         }
         int time = 0;
         while (!queue.isEmpty()) {
             int i = 0;
-            List < Integer > temp = new ArrayList < > ();
+            final List<Integer> temp = new ArrayList<>();
             while (i <= n) {
                 if (!queue.isEmpty()) {
                     if (queue.peek() > 1)
@@ -34,7 +34,7 @@ class Solution {
                     break;
                 i++;
             }
-            for (int l: temp)
+            for (final int l : temp)
                 queue.add(l);
         }
         return time;
