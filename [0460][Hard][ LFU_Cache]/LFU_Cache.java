@@ -1,5 +1,5 @@
-// leetcode time     cost : 19 ms
-// leetcode memory   cost : 50.5 MB
+// leetcode time     cost : 23 ms
+// leetcode memory   cost : 53.5 MB
 // Time  Complexity: O(1)
 // Space Complexity: O(capacity)
 // solution 1, Two dict + Doubly linked list

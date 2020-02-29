@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-  
-# leetcode time     cost : 192 ms
-# leetcode memory   cost : 21.8 MB
+# leetcode time     cost : 272 ms
+# leetcode memory   cost : 22.8 MB
 # Time  Complexity: O(1)
 # Space Complexity: O(capacity)
 # solution 1, Two dict + Doubly linked list
