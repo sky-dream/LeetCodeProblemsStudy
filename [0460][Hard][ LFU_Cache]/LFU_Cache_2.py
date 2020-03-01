@@ -41,12 +41,12 @@ class DoubleLinkedList(object):
         prev_node.nxt, node.nxt.prev = node.nxt, prev_node
         self.count -= 1
 
-    def pop():
+    def pop(self):
         if self.size() < 1:
             raise
         self.remove(self.get_tail())
 
-    def popleft():
+    def popleft(self):
         if self.size() < 1:
             raise
         self.remove(self.get_head())
