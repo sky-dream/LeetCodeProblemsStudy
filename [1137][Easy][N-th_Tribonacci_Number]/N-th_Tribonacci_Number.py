@@ -1,7 +1,9 @@
 # solution 1 ,dp
 class Solution:
     def tribonacci(self, n: int) -> int:
-        dp = [0 for i in range(n+2)]
+        if n<=1:
+            return n
+        dp = [0 for i in range(n+1)]
         dp[0] = 0
         dp[1] = 1
         dp[2] = 1  
