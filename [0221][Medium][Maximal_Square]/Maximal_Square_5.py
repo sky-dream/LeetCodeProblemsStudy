@@ -1,6 +1,6 @@
-# https://leetcode.com/problems/maximal-square/discuss/61935/6-lines-Visual-Explanation-O(mn)
-# leetcode time     cost : 152 ms
-# leetcode memory   cost : 14.3 MB
+# https://leetcode.com/problems/maximal-square/discuss/61845/9-lines-Python-DP-solution-with-explaination
+# leetcode time     cost : 112 ms
+# leetcode memory   cost : 14.4 MB 
 class Solution(object): 
     def maximalSquare(self, matrix):
         dp, maxLength = [[0 for _1_ in range(len(matrix[0]))] for ___ in range(len(matrix))], 0
