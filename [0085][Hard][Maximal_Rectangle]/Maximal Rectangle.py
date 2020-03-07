@@ -19,3 +19,13 @@ class Solution:
                     width = min(width, dp[k][j])
                     maxarea = max(maxarea, width * (i-k+1))
         return maxarea  
+
+
+def main():
+    matrix = [["1","0","1","0","0"],["1","0","1","1","1"],["1","1","1","1","1"],["1","0","0","1","0"]]  # expect is 6
+    Solution_obj = Solution()
+    result = Solution_obj.maximalRectangle(matrix)
+    print("result value is ",result)
+    
+if __name__ =='__main__':
+    main()  

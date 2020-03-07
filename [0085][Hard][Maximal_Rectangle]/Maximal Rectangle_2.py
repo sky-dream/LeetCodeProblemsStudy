@@ -36,3 +36,13 @@ class Solution:
             # update maxarea with the maximum area from this row's histogram
             maxarea = max(maxarea, self.leetcode84(dp))
         return maxarea
+
+
+def main():
+    matrix = [["1","0","1","0","0"],["1","0","1","1","1"],["1","1","1","1","1"],["1","0","0","1","0"]]  # expect is 6
+    Solution_obj = Solution()
+    result = Solution_obj.maximalRectangle(matrix)
+    print("result value is ",result)
+    
+if __name__ =='__main__':
+    main()  
