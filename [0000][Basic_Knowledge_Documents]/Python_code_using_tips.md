@@ -52,3 +52,12 @@ prices = [4,5,8,2]
 sum([y - x for x, y in zip(prices[:-1], prices[1:]) if x < y])
 sum(max(b-a,0)for a,b in zip(prices,prices[1:]))
 ```
+- 5. special handle for the 1st row and 1st col of a 2D matrix combined in the loop, refer to 1329 xxx_3.py
+```py
+        m, n = len(matrix), len(matrix[0])
+        for i in range(m):
+            #combine the sort(i,0) and sort(0,j) with 2 nested loop and below if condition judgement.
+            for j in range(1 if i else n):
+                rj = zip(mat[i:], range(j, n))
+                vals = iter(sorted(r[j] for r, j in rj))                
+```
