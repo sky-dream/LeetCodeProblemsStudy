@@ -2,7 +2,7 @@
 # leetcode memory   cost : 20.4 MB 
 # Time  Complexity: O(N)
 # Space Complexity: O(N)
-# Binary Indexed Tree
+# Binary Indexed Tree,树状数组
 class BinaryIndexedTree(object):
     def __init__(self, n):
         self.sums = [0] * (n + 1)
