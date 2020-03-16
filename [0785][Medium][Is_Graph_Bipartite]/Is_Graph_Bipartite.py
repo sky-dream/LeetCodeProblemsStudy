@@ -12,10 +12,20 @@ class Solution(object):
                 color[node] = 0
                 while stack:
                     node = stack.pop()
-                    for nei in graph[node]:
-                        if nei not in color:
-                            stack.append(nei)
-                            color[nei] = color[node] ^ 1
-                        elif color[nei] == color[node]:
+                    for neighbor in graph[node]:
+                        if neighbor not in color:
+                            stack.append(neighbor)
+                            color[neighbor] = color[node] ^ 1
+                        elif color[neighbor] == color[node]:
                             return False
         return True
+
+def main():
+    graph1 = [[1,3],[0,2],[1,3],[0,2]]      #expect is true,example 1,   
+    graph2 = [[1,2,3], [0,2], [0,1,3], [0,2]]      #expect is false,example 2,      
+    obj = Solution()
+    res = obj.isBipartite(graph1)
+    print("return value is ",res);
+    
+if __name__ =='__main__':
+    main()   
