@@ -16,17 +16,26 @@ class Solution {
             
             if(ancester[u]==0) ancester[u]=u;
             if(ancester[v]==0) ancester[v]=v;//init the union-find set  初始化并查集
-                
-            if (parent[v]!=0){// node v already has a father, so we just skip the union of this edge and check if there will be a circle ，跳过 edge2,并记下 edge1,edge2
+            //the 2nd appear edge with node have 2 father, if there is a circle, then the 2 node for edge2 can have same ancester. 
+            if (parent[v]!=0){
+                // node v already has a father, so we just skip the union of this edge and check if there will be a circle ，
+                // 跳过 edge2,并记下 edge1,edge2
                 edge1=new int[]{parent[v],v};
                 edge2=pair;
-            } else {
+            } 
+            
+            //if there is still Circle found when check last edge, means that the 1st indegree edge is in the circle, remove it.
+            //if there is no circle until last edge, then edge2 is in the circle.
+            else {
                 parent[v]=u;
                 int ancesterU=find(u);
                 int ancesterV=find(v);
                 if(ancesterU!=ancesterV){
                     ancester[ancesterV]=ancesterU;
-                } else { //meet a circle , 碰到了环
+                } 
+                // for any directed circle(顺序环), the last met edge can fulfill ancesterU == ancesterV
+                //一个环，在最后一条边出现之前都不是个环
+                else { //meet a circle , 碰到了环
                     lastEdgeCauseCircle=pair;
                 }
             }

@@ -7,6 +7,7 @@ class Solution(object):
         self.uf[self.find(b)] = self.find(a)
 
     def find(self, a):
+        # loop until we found the root node that ancester is itself
         while self.uf[a] != a:
             a = self.uf[a]
         return a
