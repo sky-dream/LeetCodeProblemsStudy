@@ -1,0 +1,1 @@
+print("egg: ",i,"floor: ",j,",egg droop min time ",dp[i][j]) 
