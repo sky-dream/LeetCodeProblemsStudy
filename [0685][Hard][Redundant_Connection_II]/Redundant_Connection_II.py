@@ -42,7 +42,7 @@ class Solution:
                     union(a, b)
                 # 此时如果可以发现新加入的一条边对应的2个node有公共祖先，则说明此时存在 环 或 存在一个合法的树，
                 # 则说明第一次遇到的2个入度的边[firsta, dupb]在环内，可以删除这条边，
-                # 否则若没遇到公共祖先，则说明第2次遇到的边[dupa, dupb]在环内，可以删除这条边[firsta, dupb]
+                # 否则若没遇到公共祖先，则说明第2次遇到的边[dupa, dupb]在环内，可以删除这条边[dupa, dupb]
                 else:
                     return [firsta, dupb]
             # 向father中加入第一次出现的2个入度的边，检测是否存在 树 或 环
@@ -54,7 +54,7 @@ class Solution:
                     union(a, b)
                 # 此时如果可以发现新加入的一条边对应的2个node有公共祖先，则说明此时存在 环 或 存在一个合法的树，
                 # 则说明第一次遇到的2个入度的边[firsta, dupb]在环内，可以删除这条边，
-                # 否则若没遇到公共祖先，则说明第2次遇到的边[dupa, dupb]在环内，可以删除这条边[firsta, dupb]
+                # 否则若没遇到公共祖先，则说明第2次遇到的边[dupa, dupb]在环内，可以删除这条边[dupa, dupb]
                 else:
                     return [firsta, dupb]
         # 删除 [dupa, dupb] 就没环了，这样就是结果
