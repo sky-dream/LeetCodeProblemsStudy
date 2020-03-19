@@ -24,6 +24,10 @@ class SegmentTree(object):
             return root
 
         mid = start + end >> 1
+        # filter()和map()类似，也接收一个函数和一个序列。
+        # 和map()不同的时，filter()把传入的函数依次作用于每个元素，
+        # 然后根据返回值是True还是False决定保留还是丢弃该元素
+        # 递归调用self.build(start, end)
         root.children = filter(None, [
             self.build(start, end)
             for start, end in ((start, mid), (mid + 1, end))])
@@ -57,7 +61,16 @@ class Solution(object):
         hashTable = {v: i for i, v in enumerate(sorted(set(nums)))}
 
         tree, r = SegmentTree(len(hashTable)), []
-        for i in xrange(len(nums) - 1, -1, -1):
+        for i in range(len(nums) - 1, -1, -1):
             r.append(tree.sum(0, hashTable[nums[i]] - 1))
             tree.update(hashTable[nums[i]], 1)
         return r[::-1]
+
+def main():
+    array = [5,2,6,1]      #expect is [2,1,1,0]    
+    obj = Solution()
+    res = obj.countSmaller(array)
+    print("return value sis ",res);
+    
+if __name__ =='__main__':
+    main()
