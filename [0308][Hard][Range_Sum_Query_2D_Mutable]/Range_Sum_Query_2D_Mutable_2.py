@@ -29,7 +29,8 @@ class NumMatrix:
         p4 = self.sum_arr[row1][col1]
         s = p1 - p2 - p3 + p4
         for (row, col), val in self.update_dic.items():
-            if   row1 <= row <= row2 and col1 <= col <= col2: s += val
+            if   row1 <= row <= row2 and col1 <= col <= col2: 
+                s += val    # apply the update changed value from the update_dic()
         return s
 
 
