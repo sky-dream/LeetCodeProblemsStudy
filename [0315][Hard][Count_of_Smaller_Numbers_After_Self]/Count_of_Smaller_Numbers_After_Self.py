@@ -1,18 +1,21 @@
 # leetcode time     cost : 236 ms
-# leetcode memory   cost : 20.4 MB 
+# leetcode memory   cost : 20.4 MB
 # Time  Complexity: O(N)
 # Space Complexity: O(N)
 # Segment Tree,线段树
+
+
 class Node():
-    def __init__(self,begin,end):
+    def __init__(self, begin, end):
         self.begin = begin
         self.end = end
         self.mid = (begin+end)//2
         self.count = 0
         self.left = None
         self.right = None
-    def add(self,num):
-        # 返回线段树中比num小的值的数量
+
+    def add(self, num):
+        # 返回线段树中比num小的值的数量,当查找到value==num的node时，该node不需要被包含，只需要左侧小于num的node个数
         self.count += 1
         if self.begin == self.end:
             return 0
@@ -26,6 +29,7 @@ class Node():
             else:
                 return self.left.count + self.right.add(num)
 
+
 class Solution(object):
     def countSmaller(self, nums):
         """
@@ -36,10 +40,10 @@ class Solution(object):
             return []
         mn = min(nums)
         mx = max(nums)
-        root = Node(mn,mx)
+        root = Node(mn, mx)
         res = []
         # 这里倒着计算，返回数组前面比自己小的个数
-        for i in range(len(nums)-1,-1,-1):
+        for i in range(len(nums)-1, -1, -1):
             # 一边构建线段树一边计算答案
             res.append(root.add(nums[i]))
         # 逆序res, 使其与 nums 元素相对应

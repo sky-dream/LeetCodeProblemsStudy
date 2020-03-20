@@ -1,10 +1,13 @@
 # leetcode time     cost : 236 ms
-# leetcode memory   cost : 20.4 MB 
+# leetcode memory   cost : 20.4 MB
 # Time  Complexity: O(N)
 # Space Complexity: O(N)
-# Segment Tree,线段树
+# Segment Tree
+
+
 class SegmentTreeNode(object):
     def __init__(self, val, start, end):
+        # start is the min index of nums, end is the max index of nums, val is the num appear counter
         self.val = val
         self.start = start
         self.end = end
@@ -15,6 +18,7 @@ class SegmentTree(object):
     def __init__(self, n):
         self.root = self.build(0, n - 1)
 
+    # start is the min index of nums, end is the max index of nums, val is the num appear counter
     def build(self, start, end):
         if start > end:
             return
@@ -58,19 +62,25 @@ class SegmentTree(object):
 
 class Solution(object):
     def countSmaller(self, nums):
-        hashTable = {v: i for i, v in enumerate(sorted(set(nums)))}
+        # get every num and its index, use value as key and sort from small,eg:{1: 0, 2: 1, 5: 2, 6: 3}
+        orderedIndexDict = {v: i for i, v in enumerate(sorted(set(nums)))}
+        print(orderedIndexDict)
+        tree, r = SegmentTree(len(orderedIndexDict)), []
 
-        tree, r = SegmentTree(len(hashTable)), []
         for i in range(len(nums) - 1, -1, -1):
-            r.append(tree.sum(0, hashTable[nums[i]] - 1))
-            tree.update(hashTable[nums[i]], 1)
+            # get the sum of num that sorted index is smaller in the dict,
+            r.append(tree.sum(0, orderedIndexDict[nums[i]] - 1))
+            # add num into tree from right using its sorted index in the dict and increase its appear counter
+            tree.update(orderedIndexDict[nums[i]], 1)
         return r[::-1]
 
+
 def main():
-    array = [5,2,6,1]      #expect is [2,1,1,0]    
+    array = [5, 2, 6, 1]  # expect is [2,1,1,0]
     obj = Solution()
     res = obj.countSmaller(array)
-    print("return value sis ",res);
-    
-if __name__ =='__main__':
+    print("return value sis ", res)
+
+
+if __name__ == '__main__':
     main()
