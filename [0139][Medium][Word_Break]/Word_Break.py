@@ -5,7 +5,7 @@
 # Space Complexity: O(N)
 #solution 2, recursion and memorize
 class Solution:
-    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+    def wordBreak(self, s: str, wordDict: [str]) -> bool:
         memo = [False]*(len(s)+1)
         wordSet = set(wordDict)
         return self.word_BreakHelper(s, wordSet, 0, memo)
@@ -25,3 +25,12 @@ class Solution:
                 return memo[start]
         memo[start] = False
         return memo[start]
+
+def main():
+    s, wordDict = "catsanddog",["cat","cats","and","sand","dog"]            #expect is True
+    obj = Solution()
+    result = obj.wordBreak(s, wordDict)
+    print("return result is :",result)
+    
+if __name__ =='__main__':
+    main() 
