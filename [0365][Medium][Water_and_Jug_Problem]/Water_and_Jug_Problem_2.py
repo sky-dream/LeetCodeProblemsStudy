@@ -12,7 +12,10 @@ class Solution:
             return z == 0 or x + y == z
         # math.gcd(x, y)求x,y 的最大公约数，辗转相除定理
         return z % math.gcd(x, y) == 0
-
+    
+    def gcd(self,a, b):
+        return  a if b == 0 else gcd(b, a % b)
+    
 def main():
     x , y , z = 3, 4, 5     #expect is true   
     obj = Solution()
