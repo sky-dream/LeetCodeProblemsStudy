@@ -1,5 +1,5 @@
-# leetcode time     cost : 64 ms
-# leetcode memory   cost : 13.8 MB 
+# leetcode time     cost : 744 ms
+# leetcode memory   cost : 21.5 MB 
 # solution 1, DP
 class Solution:
     def longestCommonSubsequence(self,str1, str2) -> int:
