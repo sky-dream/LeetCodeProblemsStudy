@@ -24,7 +24,7 @@ Input: s = "leetcode", k = 8
 Output: 0
 ```
 
-Constraints:
+# Constraints:
 
 *  1 <= k <= s.length <= 100.
 *  s only contains lowercase English letters.
