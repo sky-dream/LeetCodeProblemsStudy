@@ -11,7 +11,7 @@ class Solution:
         n = len(s)
         dp = [[0]*(n+1) for i in range(n+1)]
         # dp[l][r], the min print turn for s[l:r+1]
-        # start with the min window interval for every point
+        # start with the min window interval for every point, since large interval res is base on small interval.
         for i in range(1, n+1):
             # take every point as the left point to check every possible interval
             for l in range(n):
