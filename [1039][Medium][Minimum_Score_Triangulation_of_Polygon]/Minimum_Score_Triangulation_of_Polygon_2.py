@@ -1,5 +1,5 @@
-# leetcode time     cost : 140 ms
-# leetcode memory   cost : 13.7 MB
+# leetcode time     cost : 36 ms
+# leetcode memory   cost : 13.6 MB
 # Time  Complexity: O(N**3)
 # Space Complexity: O(N**2)
 # solution 2, Greedy
