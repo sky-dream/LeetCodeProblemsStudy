@@ -32,13 +32,15 @@ public:
 
         for (int i = 0; i < people.size(); ++i)
         {
-            const int k = skills[i];
+            const int k = skills[i];    // get skills binary for current people[i],
             if (k == 0)
                 continue;
+            // loop all skills combinations to get the min people and parent path
             for (int j = target; j >= 0; --j)
                 if (dp[j] + 1 < dp[j | k])
                 {
                     dp[j | k] = dp[j] + 1;
+                    // use people[i] to jump from skills status [j] to [j|k] better,update the path
                     pt[j | k] = {j, i};
                 }
         }

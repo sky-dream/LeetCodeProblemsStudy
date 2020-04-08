@@ -34,16 +34,19 @@ public:
             unordered_map<int, vector<int>> tmp(dp);
             for (const auto &kv : dp)
             {
-                int k = kv.first | skills[i];
-                if (!tmp.count(k) || kv.second.size() + 1 < tmp[k].size())
+                // skills[i]--->current person skill, kv.first is the skills combination, 
+                // kv.second is the current in using people index list
+                int new_skills = kv.first | skills[i];
+                // skills combination new_skills not set, or use i to jump from kv.first to new_skills is better
+                if (!tmp.count(new_skills) || kv.second.size() + 1 < tmp[new_skills].size())
                 {
-                    tmp[k] = kv.second;
-                    tmp[k].push_back(i);
+                    tmp[new_skills] = kv.second;
+                    tmp[new_skills].push_back(i);
                 }
             }
             tmp.swap(dp);
         }
-
+        // return min people list for the requested skills combination
         return dp[(1 << n) - 1];
     }
 };
