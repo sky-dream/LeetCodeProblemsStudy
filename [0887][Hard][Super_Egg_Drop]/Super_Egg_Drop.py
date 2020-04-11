@@ -3,7 +3,7 @@
 # leetcode memory   cost : --
 # Time  Complexity: O(K∗NlogN)
 # Space Complexity: O(K∗N)
-# solution 1, bynary search and DP
+# solution 1, binary search and DP
 class Solution(object):
     def superEggDrop(self, K, N):
         dp = [[float('inf')]*(N+1) for _ in range(K+1)]

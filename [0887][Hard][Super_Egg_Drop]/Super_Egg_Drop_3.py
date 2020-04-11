@@ -8,10 +8,16 @@ class Solution(object):
     def superEggDrop(self, K, N):
         # 计算 K 个鸡蛋，扔 T 次，可以覆盖多少个区间
         # 通过递归计算
+        floorX = [[0]*(N+1) for _ in range(K+1)]
         def fun(t,k):
-            if (t == 1 or k == 1): 
-                return (t + 1)
-            return fun(k - 1, t - 1) + fun(k, t- 1)
+            if (k >=1 and t==1): 
+                return 1             
+            if (t >=1 and k==1): 
+                return t 
+            #print("k,",k,",t,",t,"floorX[k][t]",floorX[k][t])
+            if not floorX[k][t]:   
+                floorX[k][t] = 1 + fun(t - 1, k - 1) + fun(t-1, k)     
+            return floorX[k][t]
         # 通过数学传递函数计算
         def fun_1(x,k):
             ans = 0
