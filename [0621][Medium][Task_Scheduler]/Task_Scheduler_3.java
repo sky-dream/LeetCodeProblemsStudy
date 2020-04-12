@@ -4,7 +4,7 @@
 // Time  Complexity: O(M)，M is all the task number
 // Space Complexity: O(1)
 import java.util.Arrays;
-class Solution {
+class Solution_0 {
     public int leastInterval(char[] tasks, int n) {
         int[] map = new int[26];
         for (char c: tasks){

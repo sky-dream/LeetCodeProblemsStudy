@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Collections;
-class Solution {
+class Solution1 {
     public int leastInterval(final char[] tasks, final int n) {
         final int[] map = new int[26];
         for (final char c : tasks)
