@@ -46,10 +46,10 @@ class Solution:
         
         return dist
 def main():
-    intervals = [[0,0,0],[0,1,0],[0,0,0]]   
+    matrix = [[0,0,0],[0,1,0],[0,0,0]]   
     expect = [[0,0,0],[0,1,0],[0,0,0]]
     obj = Solution()
-    result = obj.updateMatrix(intervals)
+    result = obj.updateMatrix(matrix)
     try:
         assert result == expect
         print("passed, result is follow expectation:",result)
