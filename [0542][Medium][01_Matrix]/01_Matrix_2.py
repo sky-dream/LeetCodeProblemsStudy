@@ -13,28 +13,28 @@ class Solution:
             for j in range(n):
                 if matrix[i][j] == 0:
                     dist[i][j] = 0
-        # 只有 水平向左移动 和 竖直向上移动，注意动态规划的计算顺序
+        # 只有 水平向右(j,1-->n-1)移动 和 竖直向下(i,1-->m-1)移动，注意动态规划的计算顺序
         for i in range(m):
             for j in range(n):
                 if i - 1 >= 0:
                     dist[i][j] = min(dist[i][j], dist[i - 1][j] + 1)
                 if j - 1 >= 0:
                     dist[i][j] = min(dist[i][j], dist[i][j - 1] + 1)
-        # 只有 水平向左移动 和 竖直向下移动，注意动态规划的计算顺序
+        # 只有 水平向右(j,1-->n-1) 和 竖直向上(i,m-2-->0)移动，注意动态规划的计算顺序
         for i in range(m - 1, -1, -1):
             for j in range(n):
                 if i + 1 < m:
                     dist[i][j] = min(dist[i][j], dist[i + 1][j] + 1)
                 if j - 1 >= 0:
                     dist[i][j] = min(dist[i][j], dist[i][j - 1] + 1)
-        # 只有 水平向右移动 和 竖直向上移动，注意动态规划的计算顺序
+        # 只有 水平向左(j,n-2-->0)移动 和 竖直向下(i,1-->m-1)移动，注意动态规划的计算顺序
         for i in range(m):
             for j in range(n - 1, -1, -1):
                 if i - 1 >= 0:
                     dist[i][j] = min(dist[i][j], dist[i - 1][j] + 1)
                 if j + 1 < n:
                     dist[i][j] = min(dist[i][j], dist[i][j + 1] + 1)
-        # 只有 水平向右移动 和 竖直向下移动，注意动态规划的计算顺序
+        # 只有 水平向左(j,n-2-->0)移动 和 竖直向上(i,m-2-->0) 移动，注意动态规划的计算顺序
         for i in range(m - 1, -1, -1):
             for j in range(n - 1, -1, -1):
                 if i + 1 < m:
