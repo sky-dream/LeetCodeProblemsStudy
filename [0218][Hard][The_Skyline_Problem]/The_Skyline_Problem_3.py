@@ -20,7 +20,7 @@ class Solution:
         
         # result保存结果
         result = [(0,0)]
-        # alive保存仍会影响后续天际线的buildings
+        # alive保存仍会影响后续天际线的building属性 (高度取反，右边界index)
         alive = [(0,float("inf"))]
         for pos, negH, R in events:
             while alive[0][1] <= pos:
