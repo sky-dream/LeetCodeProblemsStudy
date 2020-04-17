@@ -41,6 +41,7 @@ class Solution(object):
         # Iterate the newly created list and use the original nodes random pointers,
         # to assign references to random pointers for cloned nodes.
         while ptr:
+            # ptr.random.next is the new created copy of ptr.random
             ptr.next.random = ptr.random.next if ptr.random else None
             ptr = ptr.next.next
 
@@ -48,10 +49,10 @@ class Solution(object):
         # i.e. A->A'->B->B'->C->C' would be broken to A->B->C and A'->B'->C'
         ptr_old_list = head # A->B->C
         ptr_new_list = head.next # A'->B'->C'
-        head_old = head.next
+        head_new = head.next
         while ptr_old_list:
             ptr_old_list.next = ptr_old_list.next.next
             ptr_new_list.next = ptr_new_list.next.next if ptr_new_list.next else None
             ptr_old_list = ptr_old_list.next
             ptr_new_list = ptr_new_list.next
-        return head_old
+        return head_new
