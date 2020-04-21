@@ -2,6 +2,7 @@
 # leetcode memory   cost : ---- MB 
 # Time  Complexity: O(N)
 # Space Complexity: O(N)
+from typing import List
 class Solution:
     def alienOrder(self, words: List[str]) -> str:
       dic = self.build_dict(words)
@@ -52,15 +53,14 @@ class Solution:
       return graph
 
 def main():
-    k = 3
-    
-    nums1 = [9,3,-1,-3,5,3,6,7,-3] #expect is [9,3,5,5,6,7,7]
+    words1 = ["ab","abc"]     # expect is "abc"
     obj = Solution()
-    result = obj.maxSlidingWindow(nums1, k)
+    result = obj.alienOrder(words1)
     print("last return result is "+str(result));
     
-    nums2 = [1,3,-1,-3,5,3,6,7,-3] #expect is [3,3,5,5,6,7,7]
-    result = obj.maxSlidingWindow(nums2, k)
+    words2 = ["abc","ab"]     # expect is ""
+    obj = Solution()
+    result = obj.alienOrder(words2)
     print("last return result is "+str(result));
 if __name__ =='__main__':
     main() 
