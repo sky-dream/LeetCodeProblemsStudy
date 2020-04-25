@@ -1,8 +1,6 @@
 # leetcode time     cost : 24 ms
 # leetcode memory   cost : 13.5 MB
 # solution1
-
-
 class Solution:
     def rotate(self, matrix: [[int]]):
         n = len(matrix)
