@@ -2,83 +2,68 @@
 # leetcode time     cost : 32 ms
 # leetcode memory   cost : 13.7 MB
 '''
-首先将这个数字转换成回文数，也就是前半部分进行回文
+先取前一半（N）镜像成回文串，跟原数做比较
+如果等于原数，就取两个数，一个大于原数的回文，一个小于原数的回文。
+如果大于原数，就将前一半 N-1 加上剩余的一半再做一次镜像，得到一个小于原数的回文。
+如果小于原数，就将前一半 N+1 加上剩余的一半再做一次镜像，得到一个大于原数的回文。
 
-如果回文与原数相等，表示需要在这个回文的基础上寻找小于和大于的回文
-如果回文小于原数，只需要在这个回文的基础上找一个大于的回文即可
-如果回文大于原数，只需要在这个回文的基础上找一个小于于的回文即可
+其中要考虑N-1的时候的特殊情况，如 1-1，10-1，100-1，等
+这些特殊情况下的处理方式都是一样的，返回原数长度 l-1 个 9即可。
 '''
 class Solution:
+    def mirror(self,n:str):
+        length = len(n)
+        half = length // 2
+        if length % 2 == 0:
+            return n[:half] + ''.join(reversed(n[:half]))
+        else:
+            return n[:half+1] + ''.join(reversed(n[:half]))
+
+    def get_small(self,n:str):
+        half = len(n) // 2
+        if len(n) % 2 == 0:
+            half -= 1
+        half_num = int (n[:half+1])
+        half_str = str (half_num-1)
+        if half_str == '0' or len(half_str) < half + 1:
+            return '9'*(len(n)-1)
+        else:
+            return self.mirror(half_str+n[half+1:])
+    
+    def get_big(self, n:str):
+        half = len(n) // 2
+        if len(n) % 2 == 0:
+            half -= 1
+        half_num = int (n[:half+1])
+        half_str = str (half_num+1)
+
+        return self.mirror(half_str+n[half+1:])
+
+
     def nearestPalindromic(self, n: str) -> str:
         num = int(n)
-        length = len(n)
         if n == 0:
             return "1"
         if num < 10:
             return str(num - 1)
+        
+        palindromic_str = self.mirror(n)
 
-        def get_small(cur_palindrome: str):
-            cur_length = len(cur_palindrome)
-            half_pos = cur_length // 2
-            if cur_length % 2 == 0:
-                half_pos -= 1
-
-            while half_pos >= 0 and cur_palindrome[half_pos] == "0":
-                half_pos -= 1
-            ans = ""
-            if half_pos == 0 and cur_palindrome[0] == "1":
-                ans = "9" * (cur_length - 1)
-            else:
-                minus_num = str(int(cur_palindrome[half_pos]) - 1)
-                first_part = cur_palindrome[:half_pos]
-                last_part = "".join(reversed(cur_palindrome[:half_pos]))
-                if cur_length % 2:
-                    if half_pos == cur_length // 2:
-                        ans = first_part + minus_num + last_part
-                    else:
-                        ans = first_part + minus_num + "9" * ((cur_length // 2 - 1 - half_pos) * 2 + 1) + minus_num + last_part
-                else:
-                    ans = first_part + minus_num + "9" * ((cur_length // 2 - half_pos - 1) * 2) + minus_num + last_part
-            return ans
-
-        def get_big(cur_palindrome: str):
-            cur_length = len(cur_palindrome)
-            half_pos = len(cur_palindrome) // 2
-            if cur_length % 2 == 0:
-                half_pos -= 1
-            while half_pos >= 0 and cur_palindrome[half_pos] == "9":
-                half_pos -= 1
-            ans = ""
-            if half_pos == -1:
-                ans = "1" + "0" * (cur_length - 1) + "1"
-            else:
-                plus_num = str(int(cur_palindrome[half_pos]) + 1)
-                first_part = cur_palindrome[:half_pos]
-                last_part = "".join(reversed(cur_palindrome[:half_pos]))
-                if cur_length % 2:
-                    if half_pos == cur_length // 2:
-                        ans = first_part + plus_num + last_part
-                    else:
-                        ans = first_part + plus_num + "0" * ((cur_length // 2 - 1 - half_pos) * 2 + 1) + plus_num + last_part
-                else:
-                    ans = first_part + plus_num + "0" * ((cur_length // 2 - half_pos - 1) * 2) + plus_num + last_part
-
-            return ans
-
-        palindrome = ""
-        half = length // 2
-        if length % 2:
-            palindrome = n[:half + 1] + "".join(reversed(n[:half]))
+        palindromic_num = int(palindromic_str)
+        if palindromic_num > num:
+            small_num = int(self.get_small(n))
+            big_num = palindromic_num
+        elif palindromic_num < num:
+            small_num = palindromic_num
+            big_num = int(self.get_big(n))
         else:
-            palindrome = n[:half] + "".join(reversed(n[:half]))
-        palindrome_num = int(palindrome)
-        small_num = palindrome_num if palindrome_num < num else int(get_small(palindrome))
-        big_num = palindrome_num if palindrome_num > num else int(get_big(palindrome))
+            small_num = int(self.get_small(n))
+            big_num = int(self.get_big(n))
 
-        if num - small_num <= big_num - num:
-            return str(small_num)
-        else:
+        if abs(big_num - num) < abs(small_num - num):
             return str(big_num)
+        else:
+            return str(small_num)
 
 
 def main():
