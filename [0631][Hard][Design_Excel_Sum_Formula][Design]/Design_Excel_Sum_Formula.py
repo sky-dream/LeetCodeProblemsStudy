@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-  
 # leetcode time     cost : 36 ms
 # leetcode memory   cost : 13.7 MB
-# solution 1, sum formula dict and DFS in sum() and set()
+# solution 1, sum formula dict and stack in sum() and set()
 class Excel:
     def __init__(self, H: int, W: str):
         self.w = self.char_to_num(W)
@@ -88,8 +88,6 @@ class Excel:
         self.nums[r][self.char_to_num(c)] = sums
         return sums
         
-
-
 # Your Excel object will be instantiated and called as such:
 # obj = Excel(H, W)
 # obj.set(r,c,v)
