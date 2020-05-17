@@ -20,6 +20,7 @@ d = {"a":1,"b":2, "c":5}
 max(d, key=lambda k: d[k]) # solution 1,
 max(d, key=d.get)          # solution 2,
 max(d.items(), key=operator.itemgetter(1))[0] # solution 3, not easy understanding, not recomended,
+max("adfasf", "wrwessd", "sa", key=len) # get the string with max length,from problem 005 py_2,
 ```
 
 

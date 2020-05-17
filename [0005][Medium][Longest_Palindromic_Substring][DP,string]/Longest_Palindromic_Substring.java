@@ -13,6 +13,7 @@ class Solution {
         int[] arr = new int[length];
         int maxLen = 0;
         int maxEnd = 0;
+        // origin="babacdh", reverse="hdcabab"
         for (int i = 0; i < length; i++)
             /**************修改的地方***************************/
             for (int j = length - 1; j >= 0; j--) {

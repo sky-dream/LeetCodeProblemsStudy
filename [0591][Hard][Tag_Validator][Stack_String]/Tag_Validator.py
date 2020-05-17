@@ -10,10 +10,12 @@ class Solution:
         if code == 't':
             return False
         code = re.sub(r'<!\[CDATA\[.*?\]\]>', 'c', code)
+        print(code)
         prev = None
         while code != prev:
             prev = code
             code = re.sub(r'<([A-Z]{1,9})>[^<]*</\1>', 't', code)
+            print(code)
         return code == 't'
 
 def main():
