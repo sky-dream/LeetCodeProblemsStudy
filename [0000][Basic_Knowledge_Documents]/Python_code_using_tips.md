@@ -22,7 +22,11 @@ max(d, key=d.get)          # solution 2,
 max(d.items(), key=operator.itemgetter(1))[0] # solution 3, not easy understanding, not recomended,
 max("adfasf", "wrwessd", "sa", key=len) # get the string with max length,from problem 005 py_2,
 ```
-
+- 5. return default value if key is not in the dict
+```py
+d = {"a":1,"b":2, "c":5}
+local_int = d.get('f',10)   # dict.get(key,default)
+```
 
 ## 常用库函数
 - 1. 将 list 转化为 小顶堆
