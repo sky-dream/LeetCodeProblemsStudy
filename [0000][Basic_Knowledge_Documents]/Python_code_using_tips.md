@@ -66,3 +66,39 @@ sum(max(b-a,0)for a,b in zip(prices,prices[1:]))
                 rj = zip(mat[i:], range(j, n))
                 vals = iter(sorted(r[j] for r, j in rj))                
 ```
+- 6. map 函数
+```py
+def square(x) :
+    return x**2
+map(square, [1,2,3,4,5]) # [1, 4, 9, 16, 25]
+map(lambda x, y: x + y, [1, 3, 5, 7, 9], [2, 4, 6, 8, 10]) # [3, 7, 11, 15, 19]    
+```
+- 7. 多线程并发之Semaphore(信号量)，mutex（互斥量）
+```py
+from threading import Semaphore
+self.m = Semaphore(1) # No.1279, Traffic_Light_Controll
+```
+- - 7.1 semaphore（信号量）范围比较广，semaphore可能会有多个属性值。比如常见的生产者和消费者问题，就是多元信号量的一种。生产者可以生产多个元素，消费者可以消费的元素必须小于生产者的生产元素个数。从此也可以看出，semaphore是允许多个线程进入，访问互斥资源。除了多元信号量之外，还存在一种二元信号量。即只存在是与否，0与1两种状态。
+- - 7.2 mutex（互斥量）也是一种二元的锁机制，只有是（1）和否（0）的两个值，和二元信号量比较相似。但是它和二元信号量不同的是，占有和释放必须是同一个线程。比如互斥量M被线程A占有，那么释放的时候肯定也是A线程释放的。二元信号量则不必如此，一个二元信号量的占有和释放可以是不同线程
+- 8. 多线程
+```py
+import threading
+def worker(sign, lock):
+    lock.acquire()
+    print(sign, os.getpid())
+    lock.release()
+lock = threading.Lock()
+thread = threading.Thread(target=worker, args=('thread', lock))
+thread.start()   
+```
+- 9. 多进程
+```py
+import multiprocessing
+def worker(sign, lock):
+    lock.acquire()
+    print(sign, os.getpid())
+    lock.release()
+lock = multiprocessing.Lock()
+process = multiprocessing.Process(target=worker, args=('process', lock))
+process.start()
+```
