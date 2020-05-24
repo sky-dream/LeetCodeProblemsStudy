@@ -102,3 +102,12 @@ lock = multiprocessing.Lock()
 process = multiprocessing.Process(target=worker, args=('process', lock))
 process.start()
 ```
+- 10. collections.defaultdict()的使用
+```py
+from collections import defaultdict 
+s=[('yellow',1),('blue', 2), ('yellow', 3), ('red', 1)]
+d=defaultdict(list)     # No.49
+for k, v in s:
+    d[k].append(v)
+a=sorted(d.items())
+```
