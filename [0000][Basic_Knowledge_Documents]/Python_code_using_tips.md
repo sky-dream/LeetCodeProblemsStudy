@@ -111,3 +111,13 @@ for k, v in s:
     d[k].append(v)
 a=sorted(d.items())
 ```
+- 11. reduce的用法
+```py
+# No.171, xx_2.py,
+# reduce(function, sequence[, initial]) -> value
+# 对sequence连续使用function, 如果不给出initial, 则第一次调用传递sequence的两个元素, 以后把前一次调用的结果和sequence的下一个元素传递给function.
+# 如果给出initial, 则第一次传递initial和sequence的第一个元素给function.
+from functools import reduce 
+res = reduce(lambda x, y: x+y, [1,2,3], 9) 
+# res = 9 + ((1+2)+3) = 15
+```
