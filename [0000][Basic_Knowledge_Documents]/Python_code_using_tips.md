@@ -121,3 +121,19 @@ from functools import reduce
 res = reduce(lambda x, y: x+y, [1,2,3], 9) 
 # res = 9 + ((1+2)+3) = 15
 ```
+- 12. Python3字符串拼接的几种方法
+```py
+'wbz' + 'ctt' ='wbzctt' # 12.1, str1 + str2
+'wbz','ctt' =('wbz','ctt') # 12.2, str1,str2
+'wbz' 'ctt'='wbzctt' # 12.3, str1 str2
+'%s %s' % ('wbz','ctt') = 'wbz ctt'  # 12.4, %连接字符串
+#  12.5, str.join(list) 
+data = ['wbz','ctt','Python']
+str1 = '@@@'  
+str2 = ''
+str1.join(data) = 'wbz@@@ctt@@@Python'
+str2.join(data) = 'wbzcttPython'
+# 12.6, 字符串乘法
+str1 = 'Python'
+str1 * 2 = 'PythonPython'
+```
