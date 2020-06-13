@@ -137,3 +137,8 @@ str2.join(data) = 'wbzcttPython'
 str1 = 'Python'
 str1 * 2 = 'PythonPython'
 ```
+- 13. 数值元素的list转字符串并去除左侧的'0'
+```py
+nums = [0,0,0,2,4,6,9]
+res = "".join(finalStack).lstrip('0')  # used in No.402
+```
