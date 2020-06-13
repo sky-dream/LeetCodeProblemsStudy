@@ -1,4 +1,8 @@
 //consuming time: 20 ms,consuming memory: 39.8 MB,
+import java.util.List;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.LinkedList;
 class Solution {
     public List<List<Integer>> fourSum(int[] nums, int target) {
         List<List<Integer>> ans = new ArrayList<List<Integer>>();

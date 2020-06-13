@@ -1,6 +1,6 @@
 // leetcode time     cost : 3 ms
 // leetcode memory   cost : 38.3 MB
-public class Solution {
+class Solution {
     public int numDecodings(String s) {
         if(s == null || s.length() == 0) {
             return 0;
@@ -23,11 +23,11 @@ public class Solution {
     }
 }
 
-public class Decode_Ways {
+public class Decode_Ways_2 {
     public static void main(String args[]) {
         String word = "172426543102320";                     // #expect is 16
         Solution Solution_obj = new Solution();
-        Boolean result = Solution_obj.numDecodings(board, word);
+        int result = Solution_obj.numDecodings(word);
         System.out.println("return value is :" + (result));
     }
 }

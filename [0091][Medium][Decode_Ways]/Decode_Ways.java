@@ -35,7 +35,7 @@ public class Decode_Ways {
     public static void main(String args[]) {
         String word = "172426543102320";                     // #expect is 16
         Solution Solution_obj = new Solution();
-        Boolean result = Solution_obj.numDecodings(board, word);
+        int result = Solution_obj.numDecodings(word);
         System.out.println("return value is :" + (result));
     }
 }
