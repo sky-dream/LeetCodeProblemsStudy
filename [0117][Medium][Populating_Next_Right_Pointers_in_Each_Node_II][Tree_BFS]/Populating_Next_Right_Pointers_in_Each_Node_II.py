@@ -8,21 +8,21 @@ class Node:
         self.right = right
         self.next = next
 
-# solution 1, BFS
 # Time  Complexity: O(n)
 # Space Complexity: O(n)
-# leetcode time     cost : 72 ms
-# leetcode memory   cost : 15.3 MB
+# leetcode time     cost : 60 ms
+# leetcode memory   cost : 14.9 MB
+# solution 1,BFS, loop by the tree levels
 import collections 
 class Solution:
-    def connect(self, root: 'Node') -> 'Node':
+    def connect(self, root):
         if not root:
             return root
-        
         # Initialize a queue data structure which contains
         # just the root of the tree
         Q = collections.deque([root])
-        # Outer while loop which iterates over each level
+        # Outer while loop which iterates over 
+        # each level
         while Q:
             # Note the size of the queue
             size = len(Q)
@@ -30,9 +30,13 @@ class Solution:
             for i in range(size):
                 # Pop a node from the front of the queue
                 node = Q.popleft()
-                # This check is important. the last one in current level no need add next pointer
+                # This check is important. We don't want to
+                # establish any wrong connections. The queue will
+                # contain nodes from 2 levels at most at any
+                # point in time. This check ensures we only 
+                # don't establish next pointers beyond the end
+                # of a level
                 if i < size - 1:
-                    # always use the first node in the queue after current pop
                     node.next = Q[0]
                 # Add the children, if any, to the back of
                 # the queue
@@ -40,4 +44,6 @@ class Solution:
                     Q.append(node.left)
                 if node.right:
                     Q.append(node.right)
+        
+        # Since the tree has now been modified, return the root node
         return root
