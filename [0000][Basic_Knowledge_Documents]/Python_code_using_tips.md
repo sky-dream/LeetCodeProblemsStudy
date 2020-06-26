@@ -133,6 +133,9 @@ str1 = '@@@'
 str2 = ''
 str1.join(data) = 'wbz@@@ctt@@@Python'
 str2.join(data) = 'wbzcttPython'
+str = "-" 
+seq = ("a", "b", "c")  # 字符串序列
+print str.join( seq )  # a-b-c, used in No.71
 # 12.6, 字符串乘法
 str1 = 'Python'
 str1 * 2 = 'PythonPython'
