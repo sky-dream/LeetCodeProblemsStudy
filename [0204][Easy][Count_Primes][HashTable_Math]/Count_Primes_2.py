@@ -10,12 +10,12 @@ class Solution:
         i = 2
         while (i*i < n):
             if (isPrime[i]): 
-                # check current num 'i' is prime or not
-                # if num_x = i*i +i (i in [2,sqrt(n)]), then num_x is not prime
-                j = i * i
-                while (j < n):
-                    isPrime[j] = False 
-                    j+=i      
+                # check current num 'j*i' is prime or not
+                # if num_x = i*j (i*j in [2,n),2*i,3*i,4*i,....), then num_x is not prime
+                j = 2
+                while (j*i < n):
+                    isPrime[j*i] = False 
+                    j+=1      
             i +=1
         # count all the prime nums
         count = 0
