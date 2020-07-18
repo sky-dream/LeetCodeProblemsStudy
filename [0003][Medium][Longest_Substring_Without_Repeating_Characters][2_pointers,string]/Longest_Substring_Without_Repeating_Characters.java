@@ -3,6 +3,9 @@
 // Time  Complexity: O(n)
 // Space Complexity: O(n)
 // solutioin 2, 2 pointers, linearly scan
+import java.util.Set;
+import java.util.HashSet;
+
 class Solution {
 // 定义一个哈希集合 set，初始化结果 max 为 0    
     public int lengthOfLongestSubstring(String s) {

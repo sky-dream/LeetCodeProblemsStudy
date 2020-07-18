@@ -3,7 +3,9 @@
 // Time  Complexity: O(n)
 // Space Complexity: O(n)
 // solutioin 3, optimized 2 pointers, hash table
-class Solution {
+import java.util.Map;
+import java.util.HashMap;
+class Solution_2 {
     // 定义一个哈希表用来记录上一次某个字符出现的位置，并初始化结果 max 为 0
         public int lengthOfLongestSubstring(String s) {
             Map<Character, Integer> map = new HashMap<>();
