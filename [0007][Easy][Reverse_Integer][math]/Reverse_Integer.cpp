@@ -3,6 +3,8 @@
 // leetcode memory   cost : 5.9 MB
 // Time  Complexity: O(logX)
 // Space Complexity: O(1)
+#include<bits/stdc++.h>
+using namespace std;
 class Solution {
 public:
     int reverse(int x) {
@@ -17,3 +19,8 @@ public:
         return rev;
     }
 };
+/*
+使用32位存储。
+INT_MAX的值为+2147483647。
+INT_MIN的值为-2147483648。
+*/
