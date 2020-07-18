@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-  
 # leetcode time     cost : 1028 ms
 # leetcode memory   cost : 13.6 MB
-# solution 2
+# solution 2,中心扩散法，要注意奇数及偶数长度回文
 class Solution:
     def longestPalindrome(self, s):
         res = ""

@@ -2,7 +2,7 @@
 // leetcode memory   cost : 38.1 MB
 // Time  Complexity: O(n**2)
 // Space Complexity: O(n)
-// solution 2, 2 pointer
+// solution 2, 2 pointer，中心扩散法，要注意奇数及偶数长度回文
 public class Solution {
     private int lo, maxLen;
 
