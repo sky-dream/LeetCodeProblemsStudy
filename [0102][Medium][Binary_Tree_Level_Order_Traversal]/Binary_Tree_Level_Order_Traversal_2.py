@@ -40,3 +40,5 @@ class Solution:
                     queue.append(node.left)
                 if node.right:
                     queue.append(node.right)
+            level+=1
+        return levels
