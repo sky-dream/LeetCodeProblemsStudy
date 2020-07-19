@@ -1,23 +1,12 @@
-Write a program to solve a Sudoku puzzle by filling the empty cells.
+Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
 
-A sudoku solution must satisfy all of the following rules:
 
-- Each of the digits 1-9 must occur exactly once in each row.
-- Each of the digits 1-9 must occur exactly once in each column.
-- Each of the the digits 1-9 must occur exactly once in each of the 9 3x3 sub-boxes of the grid.
+The above elevation map is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped. Thanks Marcos for contributing this image!
 
-Empty cells are indicated by the character '.'.
+![rainwatertrap](rainwatertrap.png)
 
-![before](before.png)
-
-A sudoku puzzle...
-
-![after](after.png)
-
-...and its solution numbers marked in red.
-
-# Note:
-
-- The given board contain only digits 1-9 and the character '.'.
-- You may assume that the given Sudoku puzzle will have a single unique solution.
-- The given board size is always 9x9.
+# Example:
+```
+Input: [0,1,0,2,1,0,1,3,2,1,2,1]
+Output: 6
+```

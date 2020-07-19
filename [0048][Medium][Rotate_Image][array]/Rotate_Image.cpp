@@ -4,6 +4,9 @@
 // Time  Complexity: O(n*n)
 // Space Complexity: O(1)
 // solution 3, swap 4 rectangles in the loop once
+#include <stdlib.h>
+#include <vector>
+using namespace std;
 class Solution {
 public:
     void rotate(vector<vector<int>>& matrix) {
