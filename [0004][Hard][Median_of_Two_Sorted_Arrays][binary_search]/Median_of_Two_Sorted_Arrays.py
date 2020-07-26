@@ -26,15 +26,15 @@ class Solution:
             else:
                 # i is perfect
 
-                if i == 0: max_of_left = nums2[j-1]
-                elif j == 0: max_of_left = nums1[i-1]
+                if i == 0: max_of_left = nums2[j-1]  # the j-th num in num2 is the half-th in all nums
+                elif j == 0: max_of_left = nums1[i-1]  # the i-th num in num1 is the half-th in all nums
                 else: max_of_left = max(nums1[i-1], nums2[j-1])
 
                 if (m + n) % 2 == 1:
                     return max_of_left
 
-                if i == m: min_of_right = nums2[j]
-                elif j == n: min_of_right = nums1[i]
+                if i == m: min_of_right = nums2[j]      # the (j+1)-th num in num2 is the (half+1)-th in all nums
+                elif j == n: min_of_right = nums1[i]    # the (i+1)-th num in num1 is the (half+1)-th in all nums
                 else: min_of_right = min(nums1[i], nums2[j])
 
                 return (max_of_left + min_of_right) / 2.0
