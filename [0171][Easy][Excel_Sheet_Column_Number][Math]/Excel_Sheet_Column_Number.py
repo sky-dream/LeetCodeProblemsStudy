@@ -8,3 +8,9 @@ class Solution:
             res += (ord(a) - 64) * bit
             bit *= 26
         return res
+    def titleToNumber_2(self, s: str) -> int:
+        res = 0
+        # ord("A") is 65,
+        for char in s:
+            res = (ord(char) - 64) + res*26
+        return res    
