@@ -145,3 +145,8 @@ str1 * 2 = 'PythonPython'
 nums = [0,0,0,2,4,6,9]
 res = "".join(finalStack).lstrip('0')  # used in No.402
 ```
+- 14. 判断字符是否为字母或数字,及大写字母转小写函数
+```py
+str_raw = "2312qrew!#sfds"
+sgood = "".join(ch.lower() for ch in s if ch.isalnum()) # used in No.125
+```
