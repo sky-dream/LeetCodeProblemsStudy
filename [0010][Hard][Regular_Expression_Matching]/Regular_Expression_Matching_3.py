@@ -10,7 +10,7 @@ class Solution(object):
             for j in range(len(pattern) - 1, -1, -1):
                 first_match = i < len(text) and pattern[j] in {text[i], '.'}
                 if j+1 < len(pattern) and pattern[j+1] == '*':
-                    dp[i][j] = dp[i][j+2] or first_match and dp[i+1][j]
+                    dp[i][j] = dp[i][j+2] or (first_match and dp[i+1][j]) # priority: not > and > or
                 else:
                     dp[i][j] = first_match and dp[i+1][j+1]
 
