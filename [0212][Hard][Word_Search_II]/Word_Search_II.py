@@ -10,6 +10,7 @@ class Solution:
             node = root
             for c in word:
                 node = node.setdefault(c, {})
+                # d.setdefault() return the same as d.get(),but a little fast and can handle not exist key.
             node[None] = True
         board = {i + 1j*j: c
                  for i, row in enumerate(board)

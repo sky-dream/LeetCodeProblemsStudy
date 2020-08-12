@@ -1,8 +1,10 @@
 ## 数据结构
-- 1. 从字典中取值，若不存在，则返回0
+- 1.1. 从字典中取值，若不存在，则返回0
 ```py
 Dict =  {"1":1,"4":2, "8":5}
-Dict.get(num, 0)
+value = Dict.get(num, 0)
+value = Dict.setdefault(num, 0) # No.212
+# d.setdefault() return the same as d.get(),but a little fast and can handle not exist key.
 ```
 - 2. python3 get max int
 ```py
