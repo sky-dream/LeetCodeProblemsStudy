@@ -1,4 +1,5 @@
-# solution 1, analysis.
+# solution 1, analysis. 
+# in the best solution, it only include num 1,2,3.special case is n=2,n=3.
 # leetcode time     cost : 36 ms
 # leetcode memory   cost : 13.1 MB 
 # Time  Complexity: O(1)
