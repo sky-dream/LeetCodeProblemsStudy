@@ -1,0 +1,2 @@
+CompA:CompB,CompC
+CompB:CompD
